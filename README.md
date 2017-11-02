@@ -18,4 +18,4 @@ After that I have in mind a lot other features, specially focusing on adding mor
 Inspired on https://myanimelist.net/ and http://goodreads.com/. 
 
 ## Contributors
-If anyone like my idea and want to contribuite they are free to join, just send me a email.
+If you liked my idea and want to contribuite just send me a email.
