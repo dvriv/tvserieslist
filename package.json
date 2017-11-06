@@ -1,0 +1,36 @@
+{
+  "name": "tvserieslist",
+  "version": "1.0.0",
+  "description": "Create a list with your favorite TV series and share it with your friends.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app",
+    "watch-server": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dvriv/tvserieslist.git"
+  },
+  "keywords": [
+    "tvseries",
+    "tvshows",
+    "tv"
+  ],
+  "author": "David Jonadab Rivera Ortiz",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/dvriv/tvserieslist/issues"
+  },
+  "homepage": "https://github.com/dvriv/tvserieslist#readme",
+  "dependencies": {
+    "bulma": "^0.6.0",
+    "express": "^4.16.2",
+    "pug": "^2.0.0-rc.4"
+  },
+  "devDependencies": {
+    "eslint": "^4.10.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0"
+  }
+}
