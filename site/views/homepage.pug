@@ -1,0 +1,24 @@
+doctype html
+html
+    include components/head.pug
+    body
+    section(class='hero is-dark is-fullheight')
+        div(class='hero-head')
+            header(class='navbar')
+                div(class='container')
+                    div(class='navbar-brand')
+                        a(class='navbar-item')
+                            span(class='logo') TVSeriesList
+                        span(class='navbar-burger burger' data-target='navbarMenuHeroC')
+                            span Test1
+                            span Test2
+                            span Test3
+                    div(id='navbarMenuHeroC' class='navbar-menu')
+                        div(class='navbar-end')
+                            a(class='navbar-item is-active') Home
+                            a(class='navbar-item') Contact
+                            a(class='navbar-item' href='/login') Log In
+        div(class='hero-body')
+            div(class='container has-text-centered')
+                h2(class='subtitle') Create a list with your favorite TV series and share it with your friends.
+                a(href='/get-started' class='button is-primary') Get Started
