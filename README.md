@@ -1,5 +1,5 @@
 # TVSeriesList
-Create a list with your favorite TV series and share them with your friends.
+Create a list with your favorite TV series and share it with your friends.
 
 ## Project 
 This app start as a personal project made to learn and get some experience with Node.js and React. I have been learning and trying to become a JavaScript developer and I got tired of making small apps like the classic calculator/minigame that in reality nobody is going to use, and instead I want to make a real application that is useful and hopefully with a lot of users.
