@@ -5,18 +5,19 @@ html
         div(class='hero-body')
             div(class='box')
                 div(class='form-container has-text-centered')
-                    h1(class='logo logo-login') TVSeriesList
-                    div(class='field')
-                        p(class='control has-icons-left has-icons-right')
-                            input(class='input' type='email' placeholder='john@example.com')
-                            span(class='icon is-small is-left')
-                                i(class='fa fa-envelope')
-                    div(class='field')
-                        p(class='control has-icons-left')
-                            input(class='input' type='password' placeholder='******')
-                            span(class='icon is-small is-left')
-                                i(class='fa fa-lock')
-                    div(class='field')
-                        p(class='control has-text-centered')
-                            button(class='button is-primary is-medium') Login
-                    a(class='join-now' href='/signup') Or Join Now!
+                    form(action='/api/users/login' method='post')
+                        h1(class='logo logo-login') TVSeriesList
+                        div(class='field')
+                            p(class='control has-icons-left has-icons-right')
+                                input(placeholder='Username' autocapitalize='off' autocorrect='off' autofocus='autofocus' class='input' id='username' name='username' type='text')
+                                span(class='icon is-small is-left')
+                                    i(class='fa fa-envelope')
+                        div(class='field')
+                            p(class='control has-icons-left')
+                                input(placeholder='Password' class='input' id='password-field' name='password' type='password')
+                                span(class='icon is-small is-left')
+                                    i(class='fa fa-lock')
+                        div(class='field')
+                            p(class='control has-text-centered')
+                                button(class='button is-primary is-medium') Login
+                        a(class='join-now' href='/signup') Or Join Now!
