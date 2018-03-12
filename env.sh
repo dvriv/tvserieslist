@@ -1,0 +1,7 @@
+export PGUSER='dave'
+export PGHOST='localhost'
+export PGDBTVSERIESLIST='tvserieslist_dev'
+export PGPASSWORD=''
+export PGPORT='5432'
+export PORT='8080'
+export PASSPORTSECRET='asecretverysecret'
