@@ -21,8 +21,10 @@ user.addNewUser = (username, email, hash) => {
 
   db.query(query, (err, res) => {
     if (err) {
+      console.log('error inserting user', err);
       return false;
     }
+    console.log('success', res.rows[0]);
     return res.rows[0];
   });
 };
@@ -66,7 +68,6 @@ user.authUser = (res, username, password) => {
 
       if (!response) {
         console.log('password doesnt match');
-        console.log(response);
         return false;
       }
     });

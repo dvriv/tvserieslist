@@ -1,11 +1,13 @@
 const express = require('express');
 
 const userRouter = express.Router();
-
+const passport = require('passport');
 const bcrypt = require('bcryptjs');
 const jwtOptions = require('../../auth/passport.js');
 const jwt = require('jsonwebtoken');
 const user = require('./user.model.js');
+
+userRouter.use('/profile', passport.authenticate('jwt', { session: false }));
 
 userRouter.route('/registration')
   .post((req, res) => {
@@ -26,5 +28,9 @@ userRouter.route('/login')
     user.authUser(res, username, password);
   });
 
+userRouter.route('/profile')
+  .get((req, res) => {
+    res.send('TEST');
+  });
 
 module.exports = userRouter;

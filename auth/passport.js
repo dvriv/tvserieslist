@@ -25,10 +25,9 @@ const strategy = new JwtStrategy(jwtOptions, (jwt_payload, done) => {
   });
 
   if (actualUser) {
-    done(null, user);
-  } else {
-    done(null, user);
+    return done(null, user);
   }
+  return done(null, false);
 });
 
 passport.use(strategy);
