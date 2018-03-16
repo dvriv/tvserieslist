@@ -5,30 +5,22 @@ const { ExtractJwt } = passportJWT;
 const JwtStrategy = passportJWT.Strategy;
 const db = require('../db/db.js');
 
-const user = require('../api/user/user.model.js');
-
-const jwtOptions = {};
-jwtOptions.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme('jwt');
+const jwtOptions = module.exports = {};
+jwtOptions.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 jwtOptions.secretOrKey = 'asecretreallysecret';
 
 
-const strategy = new JwtStrategy(jwtOptions, (jwt_payload, done) => {
-  console.log('payload received', jwt_payload);
-  // usually this would be a database call:
-  // const actualUser = MongoClient.connect(url, (err, db) => user.userExist(db, () => db.close(), jwt_payload.id));
+const strategy = new JwtStrategy(jwtOptions, async (jwtPayload, done) => {
+  // Strategy checking the id on the payload and check if the user exist
+  console.log('payload received', jwtPayload);
+  const { userId } = jwtPayload;
+  const { rowCount } = await db.query('SELECT * FROM users WHERE id = $1', [userId]);
+  console.log('actual user is', rowCount);
 
-  const actualUser = db.query('SELECT * FROM users WHERE username = $1', jwt_payload.id, (err, res) => {
-    if (err) {
-      return false;
-    }
-    return res.row[0];
-  });
-
-  if (actualUser) {
-    return done(null, user);
+  if (rowCount) {
+    return done(null, true);
   }
   return done(null, false);
 });
 
 passport.use(strategy);
-module.exports = jwtOptions;
