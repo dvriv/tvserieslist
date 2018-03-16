@@ -2,5 +2,8 @@
     "extends": "airbnb-base",
     "plugins": [
         "import"
-    ]
+    ],
+    "rules": {
+        "brace-style": ["error", "stroustrup"]
+    }
 }
